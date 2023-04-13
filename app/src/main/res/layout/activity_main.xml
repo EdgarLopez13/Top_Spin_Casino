@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_white"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_login_bk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_login_bk_inverted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="75dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/BTNlimpiarcomida"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+
+                            android:background="@drawable/button3"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Limpiar"
+                            android:textSize="16sp"
+                            app:backgroundTint="@null"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/BTNscanear"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayout2" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout3"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="25dp"
+                            android:background="@drawable/button3"
+                            android:elevation="8dp"
+                            android:textColorHint="@color/black"
+                            app:boxBackgroundColor="@null"
+                            app:boxBackgroundMode="filled"
+                            app:boxStrokeColor="#FFFFFF"
+                            app:boxStrokeWidth="0dp"
+                            app:counterEnabled="false"
+                            app:endIconMode="clear_text"
+                            app:hintTextColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etUsuario"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:background="@drawable/edittext"
+                                android:drawableStart="@drawable/ic_baseline_person_outline_24"
+                                android:drawablePadding="5dp"
+                                android:focusable="false"
+                                android:hint="Empleado"
+                                android:inputType="textEmailAddress"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/black" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/button3"
+                            android:elevation="8dp"
+                            android:textColorHint="@color/black"
+                            app:boxBackgroundColor="@null"
+                            app:boxBackgroundMode="filled"
+                            app:boxStrokeColor="#FFFFFF"
+                            app:boxStrokeErrorColor="@color/Rojo"
+                            app:boxStrokeWidth="0dp"
+                            app:counterEnabled="false"
+                            app:endIconMode="clear_text"
+                            app:endIconTint="@color/white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textView"
+                            app:suffixTextColor="#000000">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etPlatillocomida"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:background="@drawable/edittext"
+                                android:drawableStart="@drawable/ic_baseline_fastfood_24"
+                                android:drawablePadding="10dp"
+                                android:focusable="false"
+                                android:hint="Platillo"
+                                android:inputType="textEmailAddress"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/black" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout2"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/button3"
+                            android:elevation="8dp"
+                            android:textColorHint="@color/black"
+                            app:boxBackgroundColor="@null"
+                            app:boxBackgroundMode="filled"
+                            app:boxCollapsedPaddingTop="0dp"
+                            app:boxStrokeColor="#FFFFFF"
+                            app:counterEnabled="false"
+                            app:endIconMode="clear_text"
+                            app:hintTextColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/BTNcomida"
+                            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etCostocomida"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:background="@drawable/edittext"
+                                android:drawableStart="@drawable/ic_baseline_attach_money_24"
+                                android:focusable="false"
+                                android:hint="Costo"
+                                android:inputType="textEmailAddress"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/black" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <Button
+                            android:id="@+id/BTNscanear"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+
+                            android:background="@drawable/button3"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Escanear"
+                            android:textSize="16sp"
+                            app:backgroundTint="@null"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/textView" />
+
+                        <Button
+                            android:id="@+id/BTNcomida"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/button3"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="comida"
+                            android:textSize="16sp"
+                            app:backgroundTint="@null"
+                            app:layout_constraintBottom_toBottomOf="@+id/BTNscanear"
+                            app:layout_constraintEnd_toStartOf="@+id/textView"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+                            app:layout_constraintVertical_bias="0.525" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="@+id/TVtitulocomidas"
+                            app:layout_constraintStart_toStartOf="@+id/TVtitulocomidas"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+                        <TextView
+                            android:id="@+id/TVtitulocomidas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="sans-serif-condensed-light"
+                            android:text="PEDIDOS"
+                            android:textColor="@color/Azul_Fondo"
+                            android:textSize="34sp"
+                            android:textStyle="bold|italic"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/TVtitulocomidas"
+                            app:layout_constraintStart_toStartOf="@+id/TVtitulocomidas"
+                            app:layout_constraintTop_toBottomOf="@+id/TVtitulocomidas"
+                            app:srcCompat="@drawable/food" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BTNnuevacomida"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="55dp"
+        android:layout_weight="1"
+        android:background="@drawable/button"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Comprar"
+        android:textSize="16sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardView2"
+        app:layout_constraintStart_toStartOf="@+id/cardView2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
