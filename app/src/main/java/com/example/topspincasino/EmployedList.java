@@ -93,8 +93,6 @@ public class EmployedList extends AppCompatActivity {
                                 cajas.getString("Puesto"),
                                 cajas.getDouble("Credito"),
                                 cajas.getString("Foto")
-
-
                         ));
 
 
