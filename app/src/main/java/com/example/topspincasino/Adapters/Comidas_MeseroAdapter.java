@@ -113,13 +113,14 @@ public class Comidas_MeseroAdapter extends RecyclerView.Adapter<Comidas_MeseroAd
                 } else {
 
                     MainActivity.Etprecio.setText(FoodList.get(position).getPrecio() + "");
+                    editor.putString("comida_dia","no");
+                    editor.commit();
                 }
                 MainActivity.bottomSheetDialog.dismiss();
 
                 editor.putLong("id_comida", FoodList.get(position).getId());
                 editor.commit();
-                editor.putString("comida_dia","no");
-                editor.commit();
+
             }
         });
 

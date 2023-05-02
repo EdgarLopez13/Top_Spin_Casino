@@ -48,16 +48,27 @@ public class FoodList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_list);
 
+        declaraciones();
+
+
+    }
+
+    private void declaraciones() {
+
+        //declaracion de objetos
         totalcomida = findViewById(R.id.TVtotalcomidas);
 
+        //declaracion del objeto de guardado de datos
         preferences = getSharedPreferences("sesion", Context.MODE_PRIVATE);
         editor = preferences.edit();
 
+        //declaracion del dialogo de carga
         pDialog = new SweetAlertDialog(FoodList.this, SweetAlertDialog.PROGRESS_TYPE);
         pDialog.setTitleText("Loading ...");
         pDialog.setCancelable(true);
         pDialog.show();
 
+        //Eliminar la barra de estado
         Window window = getWindow();
         Drawable background = getResources().getDrawable(R.drawable.statusbar);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -65,16 +76,17 @@ public class FoodList extends AppCompatActivity {
         window.setNavigationBarColor(getResources().getColor(android.R.color.transparent));
         window.setBackgroundDrawable(background);
         PuntosRecycler();
-
-
     }
 
 
+    //Metodo que rellena el recyclerview con los datos de las comidas del empleado
     private void PuntosRecycler() {
 
         pDialog.show();
         String RH;
         String url;
+
+        //verificar si el usuario es el que inicio sesion o Recursos Humanos
         if (preferences.getLong("id_RH", 0L) == 0L) {
             url = "https://topspincasino.000webhostapp.com/TopSpin_Cocina/Buscar_comida.php?id=" +
                     preferences.getLong("id", 0L);
@@ -96,8 +108,11 @@ public class FoodList extends AppCompatActivity {
 
                     Foodlist.clear();
 
+                    //convierte el JSON de los datos obtenidos de la API a un array para poder extraerlos
                     JSONArray array = new JSONArray(response);
 
+
+                    //Ciclo que enlista las comidas del empleado
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject cajas = array.getJSONObject(i);
 
@@ -111,6 +126,7 @@ public class FoodList extends AppCompatActivity {
 
                         ));
 
+                        //total de la cantidad gastada en comidas
                         Total = Total + cajas.getDouble("Precio");
                     }
 
@@ -118,8 +134,11 @@ public class FoodList extends AppCompatActivity {
 
 
                     pDialog.dismiss();
+
+                    //si el campo esta vacion es porque el usuario no tiene comidas en esa semana
                     if (Objects.equals(response, "[]")) {
 
+                        //valida si el que busca la comida es el mismo usuario o Recursos Humanos
                         if (RH == "si") {
                             new SweetAlertDialog(FoodList.this)
                                     .setTitleText("No Cuenta Con Comidas..")
@@ -144,6 +163,8 @@ public class FoodList extends AppCompatActivity {
                                     .show();
                         }
                     } else {
+
+                        //pasa los valores de la lista al daptador  que llena el recyclerview con los datos
                         AdapterFood adapterFood = new AdapterFood(Foodlist, FoodList.this);
                         RecyclerView recyclerView = findViewById(R.id.RV_food);
                         recyclerView.setHasFixedSize(true);
@@ -152,6 +173,8 @@ public class FoodList extends AppCompatActivity {
                     }
 
                 } catch (JSONException e) {
+
+                    //atrapa un posible error evitando que este provoque el cierre de la app y muestra un mensaje
                     pDialog.dismiss();
                     new SweetAlertDialog(FoodList.this, SweetAlertDialog.ERROR_TYPE)
                             .setTitleText("Algo Salio Mal..")
@@ -167,12 +190,15 @@ public class FoodList extends AppCompatActivity {
                         try {
                             pDialog.dismiss();
 
+                            //si la API responde con un error es porque no se pudo procesar la accion y muestra un mensaje de error
                             new SweetAlertDialog(FoodList.this, SweetAlertDialog.ERROR_TYPE)
                                     .setTitleText("Algo Salio Mal..")
                                     .setContentText("No Hemos Podido Cargar Las Comidas...")
                                     .show();
 
                         } catch (Exception e) {
+
+                            //atrapa un posible error evitando que este provoque el cierre de la app y muestra un mensaje
                             pDialog.dismiss();
                             new SweetAlertDialog(FoodList.this, SweetAlertDialog.ERROR_TYPE)
                                     .setTitleText("Algo Salio Mal..")
@@ -182,6 +208,7 @@ public class FoodList extends AppCompatActivity {
                     }
                 });
 
+        //Realiza la accion atravez de un VOLLEY
         Volley.newRequestQueue(FoodList.this).add(stringRequest);
 
     }
